@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Summer {
+  rpc Sum(ToSum) returns (Summed) {}
+}
+
+message ToSum {
+  repeated float values = 1;
+}
+
+message Summed {
+  float sum = 1;
+}
