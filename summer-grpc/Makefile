@@ -14,6 +14,9 @@ generated : .venv
 		python -m grpc_tools.protoc -Iproto --python_out=. --grpc_python_out=. proto/generated/summer.proto \
 	)
 
+test : generated
+	.venv/bin/python -m pytest .
+
 run : generated
 	.venv/bin/python -m server
 
